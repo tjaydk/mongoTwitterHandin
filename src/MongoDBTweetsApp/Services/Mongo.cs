@@ -77,7 +77,7 @@ namespace MongoDBTweetsApp.Services
         {
             var collection = db.GetCollection<BsonDocument>("tweets");
             List<string> users = new List<string>();
-            var sort = Builders<BsonDocument>.Sort.Ascending("noOfTweets");
+            var sort = Builders<BsonDocument>.Sort.Descending("noOfTweets");
             var mostActive = collection.Aggregate(new AggregateOptions { AllowDiskUse = true })
                 .Group(new BsonDocument {
                     { "_id", new BsonDocument {

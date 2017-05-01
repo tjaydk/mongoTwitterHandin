@@ -34,11 +34,11 @@ app.controller("myCtrl", function ($http) {
         ctrl.happyUsers = users;
     });
 
-    //$http.get("http://localhost:50518/api/tweets/active").then(function (res) {
-    //    var users = "";
-    //    for (var i = 0; i < res.data.length; i++) {
-    //        users += res.data[i] + ", ";
-    //    }
-    //    ctrl.mostActive = users;
-    //});
+    $http.get("http://localhost:50518/api/tweets/active").then(function (res) {
+        var users = "";
+        for (var i = 0; i < res.data.length; i++) {
+            users += res.data[i] + ", ";
+        }
+        ctrl.mostActive = users;
+    });
 });
